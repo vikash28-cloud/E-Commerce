@@ -1,0 +1,14 @@
+Authentication - 
+register user post  : http://localhost:4000/api/v1/register
+login user    post  : http://localhost:4000/api/v1/login
+logout user   get   : http://localhost:4000/api/v1/logout
+
+Product -
+
+get all products     get      : http://localhost:4000/api/v1/products
+create product       post     : http://localhost:4000/api/v1/product/new
+update product       put      : http://localhost:4000/api/v1/product/662e7a471b43534c7ed21cbd
+get product detail   get      : http://localhost:4000/api/v1/product/662e7a471b43534c7ed21cbd
+delete product       delete   : http://localhost:4000/api/v1/product/662e7a471b43534c7ed21cbd
+
+
