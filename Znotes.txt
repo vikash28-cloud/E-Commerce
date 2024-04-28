@@ -1,0 +1,29 @@
+time stamps
+32:23 = checking api using postman
+37:50 = making products api
+01:02:36 = backend error handling
+01:24:22 = Adding search filter and pagination
+01:52:21 = User and Password Authentication
+02:48:15 = created user object in product model
+
+
+
+learnings-  
+1. rest api  crud operation, postman testing
+2. dotenv -  use The dotenv package is a great way to keep passwords, API keys, and other sensitive data  out 
+                of your code
+3. backend error handling - error handling in express
+4. api features =  filter, search and pagination
+5. user and password Authentication
+        -bcryptJS
+        -JsonWebTOken
+        -validator
+        -nodeMailer
+        -cookieParser
+        -bodyParser
+
+
+
+
+hyper commands-
+change drive = cd /d
