@@ -4,7 +4,7 @@ time stamps
 01:02:36 = backend error handling
 01:24:22 = Adding search filter and pagination
 01:52:21 = User and Password Authentication
-02:48:15 = created user object in product model
+02:48:15 = create user object in product model
 
 
 
