@@ -6,7 +6,15 @@ time stamps
 01:52:21 = User and Password Authentication ->     {JsonWebTOken cookieParser bcryptJS}
 02:48:15 = create user object in product model
 02:50:50 = adding forget password functionality ->  { crypto ,JsonWebTOken}
-03:05:00 = creating send email.js ->               {nodeMailer}
+03:05:00 = creating sendemail.js ->               {nodeMailer}  
+
+
+
+
+
+current status: 
+error while sending email from gmail ,  turn on less secure access on vikash.sharma_bca@gla.ac.in
+
 
 
 
@@ -24,6 +32,9 @@ learnings concepts -
         -cookieParser
         -bodyParser
         -crypto
+
+
+
 
 
 
