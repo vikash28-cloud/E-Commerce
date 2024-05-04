@@ -48,7 +48,7 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
     })
 })
 
-// forgot passowrd 
+// forgot passowrd    getting reset password token on user mail using nodemailer
 exports.forgetPassword = catchAsyncErrors(async(req,res,next)=>{
     const user = await User.findOne({email:req.body.email});
 
@@ -84,3 +84,8 @@ exports.forgetPassword = catchAsyncErrors(async(req,res,next)=>{
     }
 
 })
+
+exports.resetPassword = catchAsyncErrors(async(req,res,next)=>{ 
+        
+
+})  
