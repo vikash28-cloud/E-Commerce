@@ -3,6 +3,7 @@ const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const User = require("../models/userModels");
 const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail")
+const crypto = require("crypto");
 // Register a User
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     const { name, email, password } = req.body;
@@ -57,8 +58,8 @@ exports.forgetPassword = catchAsyncErrors(async(req,res,next)=>{
     }
 
     // Get reset Password Token
-    const resetToken = user.getResetPasswordToken();
-    await user.save({validateBeforeSave:false});
+    const resetToken = user.getResetPasswordToken();  //from user model
+    await user.save({validateBeforeSave:false});  //save restToken in user
 
     const resetPasswordUrl = `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`
 
@@ -85,7 +86,37 @@ exports.forgetPassword = catchAsyncErrors(async(req,res,next)=>{
 
 })
 
+// Reset password
 exports.resetPassword = catchAsyncErrors(async(req,res,next)=>{ 
-        
+    // we generated reset password token in previous function 
+    // now we can access this token using req.params , and find the user using this token in database
 
+    // create token hash 
+    const resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(req.params.token)   //create a route //:token like id
+    .digest("hex");
+
+    // now look hashed token in user db
+    const user = await User.findOne({
+        resetPasswordToken,
+        resetPasswordExpire:{$gt:Date.now()}
+    })
+
+    
+    if(!user){
+        return next(new ErrorHandler("Reset password token is invalid or has been Expired",400));
+    }
+
+    if(req.body.password !== req.body.confirmPassword){
+        return next(new ErrorHandler("Password does not match",400));
+    }
+
+    user.password = req.body.password;
+
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save();
+    sendToken(user,200,res)
 })  
