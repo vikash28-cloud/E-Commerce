@@ -7,12 +7,12 @@ time stamps
 02:48:15 = create user object in product model
 02:50:50 = adding forget password functionality ->  { crypto ,JsonWebTOken}
 03:05:00 = creating sendemail.js ->   {nodeMailer}    email send using node mailer successful , got reset token on mail
-03:15:00 = creating new function resetPassword
+03:15:00 = creating new function resetPassword 
 
 
 
 current status: 
-error while sending email from gmail ,  turn on less secure access on vikash.sharma_bca@gla.ac.in   t.s 03:10:00
+error handling when a user register with already registered email
 
 
 
