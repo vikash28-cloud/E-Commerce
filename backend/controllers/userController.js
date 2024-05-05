@@ -120,3 +120,87 @@ exports.resetPassword = catchAsyncErrors(async(req,res,next)=>{
     await user.save();
     sendToken(user,200,res)
 })  
+
+
+// get user details after login
+exports.getUserDetails = catchAsyncErrors(async (req,res,next)=>{
+    const user = await User.findById(req.user.id); //when user logged in 
+    res.status(200).json({
+        success:true,
+        user
+    })
+})
+
+
+// update password after login
+exports.updatePassword = catchAsyncErrors(async(req,res,next)=>{
+    const user = await User.findById(req.user.id).select("password");
+
+    
+    const isPasswordMatched = await user.comparePassword(req.body.oldPassword);
+
+    if (!isPasswordMatched) {
+        return next(new ErrorHandler("Invalid current password", 401));
+    }
+
+    if(req.body.newPassword!==req.body.confirmPassword){
+        return next(new ErrorHandler("Password does not match", 401));
+    }
+
+    user.password  = req.body.newPassword;
+    await user.save();
+
+    sendToken(user, 200, res);
+})
+
+// update user Profile except password
+exports.updateProfile = catchAsyncErrors(async(req,res,next)=>{
+
+    const newUserData = {
+        name:req.body.name,
+        email:req.body.email,
+
+    }
+    // we wil add cloudinary later
+    const user = await User.findByIdAndUpdate(
+        req.user.id, 
+        newUserData,
+        {
+            new:true,
+            runValidators:true,
+            userFindAndModify: false
+        }
+    );
+
+   res.status(200).json({
+    success:true,
+    message:"Profile Updated Successfully"
+   })
+})
+
+// get all users
+
+exports.getAllUsers = catchAsyncErrors(async (req,res,next)=>{
+        const users = await User.find();
+
+        res.status(200).json({
+            success:true,
+            users,
+        })
+})
+
+
+//  Get single user (Admin)
+
+exports.getSingleUser = catchAsyncErrors(async (req,res,next)=>{
+    const user = await User.findById(req.params.id);
+
+    if(!user){
+        return next(new ErrorHandler(`User does not exist with id: ${req.params.id}`))
+    }
+
+    res.status(200).json({
+        success:true,
+        user,
+    })
+})

@@ -8,12 +8,13 @@ time stamps
 02:50:50 = adding forget password functionality ->  { crypto ,JsonWebTOken}
 03:05:00 = creating sendemail.js ->   {nodeMailer}    email send using node mailer successful , got reset token on mail
 03:15:00 = creating new function resetPassword 
+03:25:18 = Backend User Routes api's ->  routes for update user profile , password 
+03:42:10 = creating admin user api routes 
 
 
 
-current status: 
-error handling when a user register with already registered email
-
+current status:   03:42:10  
+creating admin user api routes 
 
 
 
