@@ -204,3 +204,48 @@ exports.getSingleUser = catchAsyncErrors(async (req,res,next)=>{
         user,
     })
 })
+
+// admin can update any user role or profile
+exports.updateUserRole = catchAsyncErrors(async(req,res,next)=>{
+
+    const newUserData = {
+        name:req.body.name,
+        email:req.body.email,
+        role:req.body.role
+
+    }
+
+    const user = await User.findByIdAndUpdate(
+        req.params.id, 
+        newUserData,
+        {
+            new:true,
+            runValidators:true,
+            userFindAndModify: false
+        }
+    );
+
+   res.status(200).json({
+    success:true,
+    message:" Updated Role Successfully"
+   })
+})
+
+// admin can delete any user
+exports.deleteUser = catchAsyncErrors(async(req,res,next)=>{
+
+    // we will remove cloudinary later
+    
+    const user = await User.findById(req.params.id);
+
+    if(!user){
+        return next(new ErrorHandler(`User does not exist with id ${req.params.id}`))
+    }
+
+    await user.deleteOne();
+
+   res.status(200).json({
+    success:true,
+    message:"User Removed Successfully"
+   })
+})
