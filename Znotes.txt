@@ -10,11 +10,11 @@ time stamps
 03:15:00 = creating new function resetPassword 
 03:25:18 = Backend User Routes api's ->  routes for update user profile , password 
 03:42:10 = creating admin user api routes 
+03:47:00 = creating product reviews
 
 
-
-current status:   03:42:10  
-creating admin user api routes 
+current status:   03:47:00  
+creating product reviews in product controller
 
 
 
