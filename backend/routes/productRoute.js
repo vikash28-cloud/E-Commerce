@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllProducts,createProduct,updateProduct,deleteProduct, getProductDetails, createProductReview } = require("../controllers/productController");
+const { getAllProducts,createProduct,updateProduct,deleteProduct, getProductDetails, createProductReview, getProductsReviews, deleteReview } = require("../controllers/productController");
 const { isAuthenticatedUser, authorizeRole } = require("../middleware/Auth");
 
 const router = express.Router();
@@ -13,4 +13,5 @@ router.route("/admin/product/:id").delete(isAuthenticatedUser, authorizeRole("ad
 
 router.route("/product/:id").get(isAuthenticatedUser, authorizeRole("admin"),getProductDetails)
 router.route("/review").put(isAuthenticatedUser,createProductReview);
+router.route("/reviews").get(getProductsReviews).delete(isAuthenticatedUser,deleteReview); //apply two methods on same route
 module.exports = router

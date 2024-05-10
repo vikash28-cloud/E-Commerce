@@ -1,4 +1,4 @@
-time stamps
+Project Time Stamps --
 32:23 = checking api using postman
 37:50 = making products api
 01:02:36 = backend error handling
@@ -11,10 +11,12 @@ time stamps
 03:25:18 = Backend User Routes api's ->  routes for update user profile , password 
 03:42:10 = creating admin user api routes 
 03:47:00 = creating product reviews
+04:02:10 = Get All Reviews , Delete a  Review 
+04:08:30 = Making Order Api's
 
 
-current status:   03:47:00  
-creating product reviews in product controller
+current status:  04:08:30
+Making Order Api's
 
 
 
