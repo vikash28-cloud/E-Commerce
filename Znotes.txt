@@ -13,11 +13,11 @@ Project Time Stamps --
 03:47:00 = creating product reviews
 04:02:10 = Get All Reviews , Delete a  Review 
 04:08:30 = Making Order Api's
-04:14:44 = Creating order controller
+04:14:44 = Creating order api's in order controller
 
 
 current status:  04:14:44
-Creating orderController.js
+Creating new Order api
 
 
 learnings concepts -  
