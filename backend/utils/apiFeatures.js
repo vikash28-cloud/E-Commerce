@@ -14,7 +14,7 @@ class ApiFeatures{
         }
         :
         {};
-        console.log(keyword)
+        // console.log(keyword)
         this.query = this.query.find({...keyword});
         return this;
     }
@@ -27,7 +27,7 @@ class ApiFeatures{
         removeFields.forEach((key)=>delete queryCopy[key]);
 
         // filter for price and rating
-        console.log(queryCopy)
+        // console.log(queryCopy)
         let queryStr = JSON.stringify(queryCopy);
         queryStr = queryStr.replace(/\b(gt|gte|lt|lte)\b/g,(key)=> `$${key}`);
 

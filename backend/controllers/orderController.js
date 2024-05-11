@@ -12,7 +12,8 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     itemsPrice,
     taxPrice,
     shippingPrice,
-    totalPrice
+    totalPrice,
+
   } = req.body;
 
   const order = await Order.create({
@@ -22,7 +23,8 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     itemsPrice,
     taxPrice,
     shippingPrice,
-    totalPrice
+    totalPrice,
+    
   })
 
   res.status(201).json({
@@ -30,3 +32,5 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     message:"Order Created Successfully"
   })
 });
+
+// Get Single Order 
