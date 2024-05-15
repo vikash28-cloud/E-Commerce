@@ -17,7 +17,7 @@ Project Time Stamps --
 
 
 current status:  04:29:16
-update order
+setup local Visual Studio Code
 
 
 learnings concepts -  
