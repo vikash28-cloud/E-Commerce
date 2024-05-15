@@ -16,8 +16,8 @@ Project Time Stamps --
 04:14:44 = Creating order api's in order controller
 
 
-current status:  04:29:16
-setup local Visual Studio Code
+current status:  04:40:00
+Error in update order
 
 
 learnings concepts -  
