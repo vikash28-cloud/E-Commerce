@@ -81,16 +81,20 @@ exports.GetAllOrders = catchAsyncErrors(async (req, res, next) => {
 });
 
 // Update Order Status  --Admin
-exports.updateOrder = catchAsyncErrors(async (res, req, next) => {
-  
+exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
+
   const order = await Order.findById(req.params.id);
- 
+
+  if (!order) {
+    return next(new ErrorHandler("Order not found with this id ", 404));
+  }
+
   if (order.orderStatus === "Delivered") {
     return next(new ErrorHandler("You have Already delivered this order", 400));
   }
 
-  order.orderItems.forEach(async (order) => {
-    await updateStock(order.product, order.quantity);
+  order.orderItems.forEach(async (o) => {
+    await updateStock(o.product, o.quantity);
   });
 
   order.orderStatus = req.body.status;
@@ -99,22 +103,22 @@ exports.updateOrder = catchAsyncErrors(async (res, req, next) => {
     order.deliveredAt = Date.now();
   }
 
-  await order.save({ validateBeforSave: false });
+  await order.save({ validateBeforeSave: false });
 
   res.status(200).json({
-    success: true,
+    success: true
   });
 });
 
 async function updateStock(id, quantity) {
+
   const product = await Product.findById(id);
 
   if (!product) {
     return next(new ErrorHandler("product not found with this order", 400));
   }
-
   product.Stock -= quantity;
-  product.save();
+  product.save({validateBeforeSave:false});
 }
 
 // Delete Order  --Admin
