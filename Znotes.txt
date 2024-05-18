@@ -1,5 +1,29 @@
 Project Time Stamps --
 
+#Frontend ---
+04:43:00 = starting frontend
+04:50:00 = created overlay navbar and getting fonts from webdontloader
+ 
+
+
+
+
+
+current status:  04:45:00
+04:50:45 = setting webfontloader in app.js
+
+
+
+
+
+Frontend Learnings Concepts - 
+1. useEffectHook in react
+
+
+
+
+
+
 #Backend ---
 32:23 = checking api using postman
 37:50 = making products api
@@ -16,23 +40,6 @@ Project Time Stamps --
 04:02:10 = Get All Reviews , Delete a  Review 
 04:08:30 = Making Order Api's
 04:14:44 = Creating order api's in order controller
-04:43:00 = starting frontend
-
-#Frontend ---
-04:44:14 = installing packages
-
-
-
-
-current status:  04:45:00
-building app.js
-
-
-
-
-Frontend Learnings Concepts - 
-
-
 
 
 
