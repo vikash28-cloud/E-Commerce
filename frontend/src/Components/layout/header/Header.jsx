@@ -5,16 +5,19 @@ import {FaUserAlt, FaSearch ,FaShoppingCart } from "react-icons/fa"
 const Header = () => {
   return (
     <ReactNavbar
-    navColor1="rgba(0,0,0,0.3)"
-    navColor2="rgba(0,0,0,0.1)"
-    navColor3="rgba(0,0,0,0.1)"
-    navColor4="rgba(0,0,0,0.1)"
-      logo={logo}
+      navColor1="rgba(0,0,0,0.2)"
+      navColor2="rgba(0,0,0,0.1)"
+      navColor3="rgba(0,0,0,0.1)"
+      navColor4="rgba(0,0,0,0.1)"
+
       burgerColor="#f76c61"
       burgerColorHover="#fc1202"
+
+      logo={logo}
       logoWidth="20vmax"
       logoHoverSize="10px"
       logoHoverColor="#eb4034"
+
       link1Text="Home"
       link2Text="Products"
       link3Text="Contact"
@@ -23,12 +26,15 @@ const Header = () => {
       link2Url="/products"
       link3Url="/contact"
       link4Url="/about"
+
       link1Size="1.3vmax"
       link1Color="rgba(35, 35, 35,0.8)"
+
       nav1justifyContent="flex-end"
       nav2justifyContent="flex-end"
       nav3justifyContent="flex-start"
       nav4justifyContent="flex-start"
+
       link1ColorHover="#eb4034"
       link1Margin="1vmax"
       profileIconUrl="/login"

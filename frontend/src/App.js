@@ -1,7 +1,9 @@
 import React from "react";
-import Header from "./Components/layout/header/Header";
 import { BrowserRouter as Router } from "react-router-dom";
 import WebFont from "webfontloader"
+
+import Header from "./Components/layout/header/Header";
+import Footer from "./Components/layout/footer/Footer";
 
 
 const App = () => {
@@ -17,6 +19,7 @@ const App = () => {
   return (
     <Router>
       <Header />
+      <Footer/>
     </Router>
   );
 };

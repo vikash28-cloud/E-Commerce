@@ -3,15 +3,15 @@ Project Time Stamps --
 #Frontend ---
 04:43:00 = starting frontend
 04:50:00 = created overlay navbar and getting fonts from webdontloader
- 
+04:53:20 = creating footer component
+05:00:17 = Footer completed
 
 
 
 
 
-current status:  04:45:00
-04:50:45 = setting webfontloader in app.js
-
+current status:  05:00:17
+importing route from react router dom in app.js
 
 
 
