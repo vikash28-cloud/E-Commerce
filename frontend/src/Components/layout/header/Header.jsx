@@ -5,10 +5,10 @@ import {FaUserAlt, FaSearch ,FaShoppingCart } from "react-icons/fa"
 const Header = () => {
   return (
     <ReactNavbar
-      navColor1="rgba(0,0,0,0.2)"
-      navColor2="rgba(0,0,0,0.1)"
-      navColor3="rgba(0,0,0,0.1)"
-      navColor4="rgba(0,0,0,0.1)"
+      navColor1="rgba(0,0,0,0.5)"
+      navColor2="rgba(0,0,0,0.4)"
+      navColor3="rgba(0,0,0,0.4)"
+      navColor4="rgba(0,0,0,0.4)"
 
       burgerColor="#f76c61"
       burgerColorHover="#fc1202"

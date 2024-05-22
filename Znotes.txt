@@ -10,15 +10,15 @@ Project Time Stamps --
 
 
 
-current status:  05:00:17
-importing route from react router dom in app.js
+current status:  05:08:37
+adding product featured on home page , creating product.js
 
 
 
 
 Frontend Learnings Concepts - 
 1. useEffectHook in react
-
+2. react router dom
 
 
 
