@@ -11,8 +11,8 @@ Project Time Stamps --
 
 
 current status:  05:20:24
-chnage title using react helmet
-understanding redux
+created store.js
+learning react
 
 
 
