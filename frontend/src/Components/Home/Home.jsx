@@ -5,7 +5,7 @@ import "./home.css"
 
 const product={
     name:"blue Tshirt",
-    images:[{url:"image_url"}],
+    images:[{url:"https://i.ibb.co/DRST11n/1.webp"}],
     price:"INR 3000",
     _id:"vikash"
 }
@@ -25,6 +25,13 @@ const Home = () => {
         <h2 className='homeHeading'> Featured Products</h2>
 
         <div className="container" id="container">
+            <Product product = {product}/>
+            <Product product = {product}/>
+            <Product product = {product}/>
+            <Product product = {product}/>
+            <Product product = {product}/>
+            <Product product = {product}/>
+            <Product product = {product}/>
             <Product product = {product}/>
         </div>
 

@@ -5,13 +5,13 @@ Project Time Stamps --
 04:50:00 = created overlay navbar and getting fonts from webdontloader
 04:53:20 = creating footer component
 05:00:17 = Footer completed
+05:16:54 = Home page is done 
+05:18:01 = implementing redux
 
 
 
-
-
-current status:  05:08:37
-adding product featured on home page , creating product.js
+current status:  05:18:24
+creating metadata.js file and importing helmet
 
 
 
