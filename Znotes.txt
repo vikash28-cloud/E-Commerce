@@ -10,9 +10,12 @@ Project Time Stamps --
 
 
 
-current status:  05:20:24
+current status:  05:31:24
 created store.js
-learning react
+created constant.js
+created action.js
+
+errro comes in store js in configurestore
 
 
 
