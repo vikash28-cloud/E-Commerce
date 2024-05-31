@@ -10,8 +10,9 @@ Project Time Stamps --
 
 
 
-current status:  05:31:24
-error resolved = comes in productReducer.js  , because we cannot set defalut state
+current status:  05:32:00
+creating productActions.js inside Actions Folder,
+getting all products using axios from backend server
 
 
 
