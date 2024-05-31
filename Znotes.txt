@@ -7,12 +7,11 @@ Project Time Stamps --
 05:00:17 = Footer completed
 05:16:54 = Home page is done 
 05:18:01 = implementing redux
+05:41:49 = get all products from server 
 
 
-
-current status:  05:34:41
-creating productActions.js inside Actions Folder,
-getting all products using axios from backend server
+current status:  05:41:49
+get all products from server 
 
 
 
