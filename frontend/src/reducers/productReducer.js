@@ -29,7 +29,7 @@ export const productReducer = (state= {products:[]}, action)=>{
             }
            
         default:
-            break;
+            return state;
     }
 
 }

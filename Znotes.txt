@@ -11,11 +11,7 @@ Project Time Stamps --
 
 
 current status:  05:31:24
-created store.js
-created constant.js
-created action.js
-
-errro comes in store js in configurestore
+error resolved = comes in productReducer.js  , because we cannot set defalut state
 
 
 
