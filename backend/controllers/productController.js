@@ -24,7 +24,7 @@ exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
 
   let products = await apiFeature.query;
   res.status(200).json({
-    message: "route is working fine",
+    success:true,
     products,
     productCount
   });

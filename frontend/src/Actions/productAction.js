@@ -1,10 +1,10 @@
 import axios from "axios";
 import {
     ALL_PRODUCT_FAIL,
-    FALL_PRODUCT_REQUEST,
+    ALL_PRODUCT_REQUEST,
     ALL_PRODUCT_SUCCESS,
     CLEAR_ERRORS,
-    ALL_PRODUCT_REQUEST,
+
 } from "../constants/productConstants";
 
 
@@ -14,6 +14,11 @@ export const getProduct = ()=>async(dispatch)=>{
 
         const {data} = await axios.get("api/v1/products")
 
+        dispatch({
+            type:ALL_PRODUCT_SUCCESS,
+            payload:data
+        })
+
     } catch (error) {
         dispatch({
             type:ALL_PRODUCT_FAIL,
@@ -21,4 +26,12 @@ export const getProduct = ()=>async(dispatch)=>{
         });
         
     }
+}
+
+
+// clearing errors
+export const clearErrors = ()=>async(dispatch)=>{
+    dispatch({
+        type:CLEAR_ERRORS
+    })
 }
