@@ -6,22 +6,30 @@ import Metadata from '../layout/Metadata.jsx'
 import { getProduct } from "../../Actions/productAction.js"
 import { useSelector, useDispatch } from "react-redux"
 import Loader from '../layout/Loader/Loader.jsx'
-
+import { useAlert } from 'react-alert'
 
 
 const Home = () => {
+
+    const alert = useAlert();
+
     const dispatch = useDispatch();
     const { loading, error, products, productsCount } = useSelector(state => state.products)
 
     useEffect(() => {
+        if (error) {
+            return alert.error(error);
+        }
+       
         dispatch(getProduct())
-    }, [dispatch])
+    }, [dispatch,error, alert])
+
 
 
     return (
         <Fragment>
 
-            {loading ? (<Loader/>) : (<Fragment>
+            {loading ? (<Loader />) : (<Fragment>
                 <Metadata title="ECOMMERCE" />
                 <div className="banner">
                     <p>Welcome to Ecommerce </p>
@@ -37,7 +45,7 @@ const Home = () => {
 
                 <div className="container" id="container">
                     {products && products.map(product => (
-                        <Product product={product} />
+                        <Product key={product._id} product={product} />
                     ))}
                 </div>
 

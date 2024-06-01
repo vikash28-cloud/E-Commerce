@@ -22,13 +22,13 @@ export const productReducer = (state = { products: [] }, action) => {
     case ALL_PRODUCT_FAIL:
       return {
         loading: false,
-        err: action.payload,
+        error: action.payload,
       };
 
     case CLEAR_ERRORS:
       return {
         ...state,
-        err: null,
+        error: null,
       };
 
     default:
