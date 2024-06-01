@@ -3,54 +3,54 @@ import { CgMouse } from "react-icons/cg"
 import Product from "./Product.js"
 import "./home.css"
 import Metadata from '../layout/Metadata.jsx'
-import {getProduct} from "../../Actions/productAction.js"
-import {useSelector,useDispatch} from "react-redux"
+import { getProduct } from "../../Actions/productAction.js"
+import { useSelector, useDispatch } from "react-redux"
+import Loader from '../layout/Loader/Loader.jsx'
 
 
-const product={
-    name:"blue Tshirt",
-    images:[{url:"https://i.ibb.co/DRST11n/1.webp"}],
-    price:"INR 3000",
-    _id:"vikash"
-}
 
 const Home = () => {
     const dispatch = useDispatch();
-    const {loading,error, products,productsCount} = useSelector(state=>state.products)
+    const { loading, error, products, productsCount } = useSelector(state => state.products)
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getProduct())
-    },[dispatch])
+    }, [dispatch])
 
 
-    
+    return (
+        <Fragment>
 
-    return <Fragment>
-        <Metadata title="ECOMMERCE" />
-        <div className="banner">
-            <p>Welcome to Ecommerce </p>
-            <h1>FIND AMAZING PRODUCTS BELOW</h1>
+            {loading ? (<Loader/>) : (<Fragment>
+                <Metadata title="ECOMMERCE" />
+                <div className="banner">
+                    <p>Welcome to Ecommerce </p>
+                    <h1>FIND AMAZING PRODUCTS BELOW</h1>
 
 
-            <a href="#container" >
-                <button>Scroll <CgMouse /></button>
-            </a>
-        </div>
+                    <a href="#container" >
+                        <button>Scroll <CgMouse /></button>
+                    </a>
+                </div>
 
-        <h2 className='homeHeading'> Featured Products</h2>
+                <h2 className='homeHeading'> Featured Products</h2>
 
-        <div className="container" id="container">
-            <Product product = {product}/>
-            <Product product = {product}/>
-            <Product product = {product}/>
-            <Product product = {product}/>
-            <Product product = {product}/>
-            <Product product = {product}/>
-            <Product product = {product}/>
-            <Product product = {product}/>
-        </div>
+                <div className="container" id="container">
+                    {products && products.map(product => (
+                        <Product product={product} />
+                    ))}
+                </div>
 
-    </Fragment>
+            </Fragment>)
+            }
+        </Fragment>
+
+
+    )
+
+
+
+
 }
 
 export default Home

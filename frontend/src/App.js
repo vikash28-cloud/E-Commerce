@@ -21,6 +21,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route extact path="/" Component={Home} />
+        
       </Routes>
 
       <Footer />

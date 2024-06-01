@@ -8,11 +8,10 @@ Project Time Stamps --
 05:16:54 = Home page is done 
 05:18:01 = implementing redux
 05:41:49 = get all products from server 
+05:51:20 = created loader component 
 
-
-current status:  05:41:49
-get all products from server 
-
+current status:  05:52:23
+import somethings from react alert 
 
 
 
