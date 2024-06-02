@@ -9,12 +9,11 @@ Project Time Stamps --
 05:18:01 = implementing redux
 05:41:49 = get all products from server 
 05:51:20 = created loader component 
+06:01:00 = created product details reducer
 
 
-current status:  05:52:23
-use react alert for handling errors while fetching data from server
-issue in react alert - solved
-start creating product detail reducer
+current status:  06:02:40
+creating product details component
 
 
 

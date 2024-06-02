@@ -117,3 +117,15 @@
         font:300 1vmax "Roboto";
     }
 }
+.totalProduct{
+
+    
+    font-family: Roboto;
+    font-size: 1.6vmax;
+    
+    width: 20vmax;
+    margin: 1vmax 2vmax;
+    padding: 1vmax;
+    color: rgb(0, 0, 0.7);
+
+}

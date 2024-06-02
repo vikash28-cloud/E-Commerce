@@ -14,7 +14,7 @@ const Home = () => {
     const alert = useAlert();
 
     const dispatch = useDispatch();
-    const { loading, error, products, productsCount } = useSelector(state => state.products)
+    const { loading, error, products, productCount } = useSelector(state => state.products)
 
     useEffect(() => {
         if (error) {
@@ -42,6 +42,7 @@ const Home = () => {
                 </div>
 
                 <h2 className='homeHeading'> Featured Products</h2>
+                <p className='totalProduct'>Total Products {productCount}</p>
 
                 <div className="container" id="container">
                     {products && products.map(product => (
