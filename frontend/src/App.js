@@ -5,7 +5,7 @@ import "./App.css"
 import Header from "./Components/layout/header/Header";
 import Footer from "./Components/layout/footer/Footer";
 import Home from "./Components/Home/Home.jsx";
-
+import ProductDetails from "./Components/Product/ProductDetails.jsx"
 const App = () => {
   // we have to load fonts first on start
   React.useEffect(() => {
@@ -20,10 +20,9 @@ const App = () => {
     <Router>
       <Header />
       <Routes>
-        <Route extact path="/" Component={Home} />
-        
+        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/product/:id" element={<ProductDetails/>} />
       </Routes>
-
       <Footer />
     </Router>
   );

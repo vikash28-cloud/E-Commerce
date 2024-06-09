@@ -12,8 +12,11 @@ Project Time Stamps --
 06:01:00 = created product details reducer
 
 
-current status:  06:02:40
+current status:  06:05:12
 creating product details component
+installing some things for carousel
+
+productDetails state problem 
 
 
 

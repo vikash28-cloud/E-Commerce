@@ -11,7 +11,9 @@ const reducer =combineReducers({
 
 // Initial state
 let initialState = {
-    products:[]
+    products:[],
+    productDetails:{}
+   
 };
 
 // Middleware array
