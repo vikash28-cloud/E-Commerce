@@ -26,8 +26,8 @@ const ProductDetails = () => {
 
                     <Carousel>  
                         {
-                            product.images &&
-                            product.images.map((item, i) => (
+                            product.product.images &&
+                            product.product.images.map((item, i) => (
                                 <img
                                     src={item.url}
                                     className="CarouselImage"
