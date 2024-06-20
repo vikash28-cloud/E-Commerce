@@ -17,31 +17,25 @@ const ProductDetails = () => {
 
     return (
         <Fragment>
-
-            <div className="productDetails">
-                <div>
-                    {
-                        console.log(product)
-                    }
-
-                    <Carousel>  
-                        {
-                            product.images &&
-                            product.images.map((item, i) => (
-                                <img
-                                    src={item.url}
-                                    className="CarouselImage"
-                                    key={item.url}
-                                    alt={`${i} Slide`}
-                                />
-                            ))
-
-                        }
-
+        <div className="productDetails">
+            <div>
+                {product && product.product && product.product.images ? (
+                    <Carousel>
+                        {product.product.images.map((item, i) => (
+                            <img
+                                src={item.url}
+                                className="CarouselImage"
+                                key={item.url}
+                                alt={`${i} Slide`}
+                            />
+                        ))}
                     </Carousel>
-                </div>
+                ) : (
+                    <p>Loading...</p>
+                )}
             </div>
-        </Fragment>
+        </div>
+    </Fragment>
     )
 }
 
